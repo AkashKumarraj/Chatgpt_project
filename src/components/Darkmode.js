@@ -1,23 +1,24 @@
 import React,{useState, useEffect} from 'react'
-
+import { IoSunnyOutline } from "react-icons/io5";
+import "./Darkmode.css"
 function Darkmode() {
-    const[mode,setMode]=useState("darkmode")
+    const[mode,setMode]=useState("dark-mode")
     function toggle(){
-        if(mode==="darkmode"){
-            setMode("lightmode")
+        if(mode==="dark-mode"){
+            setMode("light-mode")
         }
         else{
-            setMode("darkmode")
+            setMode("dark-mode")
         }
     }
     useEffect(()=>{
         document.body.className=mode
     },[mode])
   return (
-    <button onClick={()=>{
+    <button className="darkmodebtn" onClick={()=>{
         toggle()
         console.log(mode);
-    }}>dark</button>
+    }}><IoSunnyOutline /></button>
 
   )
 }

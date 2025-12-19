@@ -13,8 +13,14 @@
 .light-mode{
   --color:black;
   --background-color:white;
+  --btn-background-color:black;
+  --btn-color:white;
+  --hover-btn-background-color:rgb(23, 32,33);
 }
 .dark-mode{
   --color:white;
   --background-color:rgb(23, 32, 33);
+  --btn-background-color:white;
+  --btn-color:black;
+  --hover-btn-background-color:white;
 }

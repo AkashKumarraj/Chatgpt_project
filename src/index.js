@@ -9,8 +9,7 @@ root.render(
   <UserContext>
     <App />
   </UserContext>
-
-  
+ 
 )
 
 // If you want to start measuring performance in your app, pass a function
