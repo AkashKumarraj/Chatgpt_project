@@ -1,5 +1,6 @@
 import React,{useState, useEffect} from 'react'
 import { IoSunnyOutline } from "react-icons/io5";
+import { FaMoon } from "react-icons/fa";
 import "./Darkmode.css"
 function Darkmode() {
     const[mode,setMode]=useState("dark-mode")
@@ -18,7 +19,8 @@ function Darkmode() {
     <button className="darkmodebtn" onClick={()=>{
         toggle()
         console.log(mode);
-    }}><IoSunnyOutline /></button>
+    }}>{mode==="dark-mode"?<IoSunnyOutline />:<FaMoon />
+}</button>
 
   )
 }

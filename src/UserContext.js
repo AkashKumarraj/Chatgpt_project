@@ -1,13 +1,44 @@
-import React,{createContext} from 'react'
+import React,{useState, createContext} from 'react'
 import run from './gemini'
 export const dataContext=createContext()
 
 function UserContext({children}) {
-    async function sent(){
-        await run("hello")
+  const[input,setInput]=useState("")
+  const[showResult, setShowResult]=useState(false)
+  const[loading, setLoading]=useState(false)
+  const[resultData, setResultData]=useState("")
+  const[recentPrompt,setRecentPrompt]=useState("")
+  const[prevPrompt, setPrevPrompt]=useState([])
+
+  function newChat(){
+    setShowResult(false)
+    setLoading(false)
+  }
+    async function sent(input){
+      setResultData("")
+      setShowResult(true)
+      setRecentPrompt(input)
+      setLoading(true)
+      setPrevPrompt(prev=>[...prev,input])
+
+      let response=await run(input)
+      setResultData(response.split("*")&&response.split("**"))
+      setLoading(false)
+      setInput("")
     }
     const data={
-        sent
+      input, 
+      setInput,
+      sent,
+      loading,
+      showResult,
+      setShowResult,
+      resultData,
+      setResultData,
+      setRecentPrompt,
+      recentPrompt,
+      prevPrompt,
+      newChat
     }
   return (
     <>

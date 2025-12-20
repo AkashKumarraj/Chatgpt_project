@@ -8,6 +8,7 @@
     flex-direction:column;
     gap:20px;
     align-items:start;
+    scrollbar-width:none;
 }
 .sidebar.svg{
     width:30px;
@@ -39,6 +40,7 @@
     border-radius:30px;
     cursor:pointer;
     transition:all 0.2s;
+    
 }
 
 .recent:hover{
@@ -48,4 +50,10 @@
 .newchat:hover{
     background-color:rgb(82, 85, 86);
     
+}
+
+@media(max-width:600px){
+    .sidebar{
+        display:none;
+    }
 }
