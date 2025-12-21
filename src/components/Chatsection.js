@@ -23,7 +23,7 @@ function Chatsection() {
                     </div>
                     <div className="aibox">
                         <img src={ai} alt="" width="50px" />
-                        {loading ? <div className="loader">
+                        {loading ? <div className='loader'>
                             <hr />
                             <hr />
                             <hr />

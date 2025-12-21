@@ -6,9 +6,9 @@ import {
 
 } from "@google/generative-ai"
 
-const api = "AIzaSyDb-0N1GuJDLTGgWfq26qnlKyxyWi_IXzo"
-const genAI = new GoogleGenerativeAI
-    (api);
+const api = process.env.REACT_APP_GEMINI_API_KEY
+console.log('Using API Key:', api ? `${api.substring(0, 5)}*******************************` : 'NONE')
+const genAI = new GoogleGenerativeAI(api);
 
 const model = genAI.getGenerativeModel({
     model: "gemini-flash-latest",

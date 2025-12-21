@@ -120,12 +120,13 @@
     height:20px;
     border:none;
     border-radius:20px;
-    background:linear-gradient(to right, rgb(63, 205, 227),var
-    (--background-color),rgb(63, 205, 227));
+    background:linear-gradient(to right, rgb(63, 205, 227),
+    var(--background-color),rgb(63, 205, 227));
     background-size:800px 50px;
     animation: loader 2s linear infinite;
 }
 @keyframes loader{
+
     0%{
         background-position: -800px 0px;
     }
